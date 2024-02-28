@@ -38,3 +38,8 @@ products = [
     Product("Carrot", 1.1, 8),
     Product("Broccoli", 2.2, 1)
 ]
+
+
+# Serialize the Product objects to a JSON file
+with open("product.json", "w") as json_file:
+    json.dump(products, json_file, default=custom_encoder, indent=4)
