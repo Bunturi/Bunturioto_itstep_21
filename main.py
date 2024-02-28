@@ -20,3 +20,8 @@ def custom_encoder(obj):
             "quantity": obj.quantity
         }
     return obj
+
+
+# Custom decoder function to handle deserialization of Product objects
+def custom_decoder(json_data):
+    return Product(json_data['name'], json_data['price'], json_data['quantity'])
