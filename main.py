@@ -48,3 +48,10 @@ with open("product.json", "w") as json_file:
 # Deserialize the JSON file back to Python objects
 with open("product.json", "r") as read_json:
     python_data = json.load(read_json, object_hook=custom_decoder)
+
+# Display the deserialized Python objects
+for data in python_data:
+    print("product:", data.name)
+    print("price:", data.price)
+    print("quantity:", data.quantity)
+    print()
