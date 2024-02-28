@@ -43,3 +43,8 @@ products = [
 # Serialize the Product objects to a JSON file
 with open("product.json", "w") as json_file:
     json.dump(products, json_file, default=custom_encoder, indent=4)
+
+
+# Deserialize the JSON file back to Python objects
+with open("product.json", "r") as read_json:
+    python_data = json.load(read_json, object_hook=custom_decoder)
